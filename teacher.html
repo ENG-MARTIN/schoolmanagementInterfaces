@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Form</title>
+<style>
+
+.form-container {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+}
+
+.tabs {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 120px;
+}
+
+.tab {
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.form-content {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <h2>Teachers window</h2>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./images/bright star  badge.png" height="80" width="80"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Teacher</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Student</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Administrator</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Accountant</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="home.html">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="form-container">
+        <div class="tabs">
+            <div class="tab" onclick="showContent('tab1')">Tab 1</div>
+            <div class="tab" onclick="showContent('tab2')">Tab 2</div>
+            <div class="tab" onclick="showContent('tab3')">Tab 3</div>
+            <div class="tab" onclick="showContent('tab4')">Tab 4</div>
+            <div class="tab" onclick="showContent('tab5')">Tab 5</div>
+            <div class="tab" onclick="showContent('tab6')">Tab 6</div>
+            <div class="tab" onclick="showContent('tab7')">Tab 7</div>
+        </div>
+
+        <div class="form-content">
+            <div id="tab1" class="tab-content">Information for Tab 1</div>
+            <div id="tab2" class="tab-content">Information for Tab 2</div>
+            <div id="tab3" class="tab-content">Information for Tab 3</div>
+            <div id="tab4" class="tab-content">Information for Tab 4</div>
+            <div id="tab5" class="tab-content">Information for Tab 5</div>
+            <div id="tab6" class="tab-content">Information for Tab 6</div>
+            <div id="tab7" class="tab-content">Information for Tab 7</div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(tabId) {
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+            document.getElementById(tabId).style.display = "block";
+        }
+    </script>
+</body>
+</html>
