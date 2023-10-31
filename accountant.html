@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts department</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <br>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="./images/bright star  badge.png" height="80" width="80"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Teacher</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Student</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Administrator</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html">Accountant</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="home.html">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    
+    <div class="container mt-5">       
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search case by name" aria-label="Search" style="width:500px; border:2px solid">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+          <br>
+          <br>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Fee Submission Form</h2>
+                <form id="feeForm" action="#" method="post">
+                    <div class="form-group">
+                        <label for="student_name">Student Name:</label>
+                        <input type="text" class="form-control" id="student_name" name="student_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="text" class="form-control" id="amount" name="amount" required>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary" onclick="submitFee()">Pay</button>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Fees Details</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Amount Paid</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feeTableBody">
+                        <!-- Fees details will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <span>&copy; 2023 our school</span>
+            <p>All rights reserved</p>
+        </div>
+    </footer>
+    </div>
+      
+</body>
+</html>

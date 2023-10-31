@@ -8,8 +8,9 @@
 
         .form-container {
             display: flex;
-            width: 100%;
-            height: 75vh;
+            width: 90%;
+            height: 70vh;
+            margin-left: 10px;
         }
         
         .tabs {
@@ -39,6 +40,7 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: 10px;
         }
         .form-group{
             margin-right: 20px;
@@ -53,12 +55,16 @@
             width: 100%;
             height: 80px;
         }
+        h2{
+            margin-left: 30px;
+        }
         </style>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         
         </head>
         <body>
-            <h2>Teachers window</h2>
+            <br>
+            <h2>Administrator Dashboard</h2>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#"><img src="./images/bright star  badge.png" height="80" width="80"></a>
@@ -87,6 +93,7 @@
                   </div>
                 </div>
               </nav>
+              <br>
             <div class="form-container">
                 <div class="tabs">
                     <div class="tab" onclick="showContent('tab1')">Register student</div>
@@ -98,7 +105,6 @@
         
                 <div class="form-content">
                     <div id="tab1" class="tab-content">
-                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
                     </head>
                     <body>
                         <div class="container mt-5" >
@@ -119,6 +125,7 @@
                                     <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
                                 
+                                
                                 <div class="form-group">
                                     <label for="gender">Gender:</label>
                                     <select class="form-control" id="gender" name="gender" required>
@@ -138,6 +145,14 @@
                                     <input type="text" class="form-control" id="course" name="course" required>
                                 </div>
                                 
+                                <div class="form-group">
+                                    <label for="gender">Gender:</label>
+                                    <select class="form-control" id="gender" name="gender" required>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
                                
                             </form>
                             
@@ -146,24 +161,108 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                    <div id="tab2" class="tab-content">
 
+                    <div id="tab2" class="tab-content">
+                        <div class="container mt-5">
+                            <h1 class="text-center">Teachers Registration Form</h1>
+                            <form id="teachersForm" action="#" method="post">
+                                <div class="form-group">
+                                    <label for="teacher_name">Teacher Name:</label>
+                                    <input type="text" class="form-control" id="teacher_name" name="teacher_name" required>
+                                </div>                                                            
+
+                                <div class="form-group">
+                                    <label for="subject">Subject:</label>
+                                    <input type="text" class="form-control" id="subject" name="subject" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="gender">Gender:</label>
+                                    <select class="form-control" id="gender" name="gender" required>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>  
+                                <button type="button" class="btn btn-success" onclick="addTeacher()">Add</button>
+                                <button type="button" class="btn btn-danger" onclick="deleteTeacher()">Delete</button>
+                            </form>
+                            
+                            <h2 class="mt-5">Registered Teachers</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Teacher Name</th>
+                                        <th>Subject</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="teacherTableBody">
+                                    <!-- Teachers will be added here dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <!-- Include Bootstrap JS (optional) -->
+                        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                    
                     </div>
                     <div id="tab3" class="tab-content">
 
                     </div>
+
                     <div id="tab4" class="tab-content">
                         <div>
-                            <h3>Fees submission window</h3>
+                            <div class="container mt-5">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h2>Fee Submission Form</h2>
+                                        <form id="feeForm" action="#" method="post">
+                                            <div class="form-group">
+                                                <label for="student_name">Student Name:</label>
+                                                <input type="text" class="form-control" id="student_name" name="student_name" required>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="amount">Amount:</label>
+                                                <input type="text" class="form-control" id="amount" name="amount" required>
+                                            </div>
+                                            
+                                            <button type="button" class="btn btn-primary" onclick="submitFee()">Pay</button>
+                                        </form>
+                                    </div>
+                        
+                                    <div class="col-md-6">
+                                        <h2>Fees Details</h2>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Student Name</th>
+                                                    <th>Amount Paid</th>
+                                                    <th>Balance</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="feeTableBody">
+                                                <!-- Fees details will be added here dynamically -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        
                         </div>
                     </div>
                     
                 </div>
                 
             </div>
-            <div class="footer">
-            <p>&copy; All rights reserved!</p>
-        </div>
+            <footer class="bg-dark text-white text-center py-3">
+                <div class="container">
+                    <span>&copy; 2023 our school</span>
+                    <p>All rights reserved</p>
+                </div>
+            </footer>
             <script>
                 function showContent(tabId) {
                     var tabContents = document.getElementsByClassName("tab-content");
@@ -172,6 +271,31 @@
                     }
                     document.getElementById(tabId).style.display = "block";
                 }
+</script>
+
+<script>
+    function addTeacher() {
+        var teacherName = document.getElementById("teacher_name").value;
+        var subject = document.getElementById("subject").value;
+
+        var tableBody = document.getElementById("teacherTableBody");
+        var newRow = tableBody.insertRow();
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        cell1.innerHTML = teacherName;
+        cell2.innerHTML = subject;
+
+        document.getElementById("teachersForm").reset();
+    }
+
+    function deleteTeacher() {
+        var table = document.getElementById("teacherTableBody");
+        var rowCount = table.rows.length;
+
+        if (rowCount > 0) {
+            table.deleteRow(rowCount - 1);
+        }
+    }
 </script>
 </body>
 </html>
